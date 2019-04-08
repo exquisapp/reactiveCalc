@@ -13,6 +13,7 @@
 }
 
 .calc-section{
+    margin-top: 40px;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -20,6 +21,7 @@
     'screen'
     'buttons';
     .screen{
+        padding: 22px;
         width: 60vw;
         height: 200px;
         grid-area: screen;
@@ -50,6 +52,9 @@
             grid-template-rows: auto auto auto auto;
             .op{
                 grid-row: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
