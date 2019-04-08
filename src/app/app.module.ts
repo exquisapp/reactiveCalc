@@ -7,7 +7,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { Page404Component } from './page404/page404.component';
 
 import { StoreModule } from '@ngrx/store';
-import { pizzaReducers } from './store/reducers';
+// import { pizzaReducers } from './store/reducers';
+import { calculatorReducer } from './store/reducers/calculator.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { pizzaReducers } from './store/reducers';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(pizzaReducers)
+    StoreModule.forRoot({ "reactiveCalc": calculatorReducer})
     //reason for the ActionReducerMap is because forRoot() takes only that type of reducer or InjectionToken
   ],
   providers: [],

@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Pizza } from './../models/pizza.model';
 import * as fromStore from './../store';
 
+import * as allActions from './../store/actions/calculator.action';
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -15,7 +17,11 @@ export class CalculatorComponent implements OnInit {
   constructor(private store: Store<fromStore.ProductState>) { }
 
   ngOnInit() {
-    this.store.select<any>('pizzas').subscribe(data => console.log(data));
+    this.store.select<any>('reactiveCalc').subscribe(data => console.log(data));
+  }
+
+  dispatchLoad(){
+    this.store.dispatch(new allActions.Add(2));
   }
 
 }

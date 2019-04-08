@@ -26,6 +26,7 @@ export const initialState : PizzaState = {
 export function PizzaReducer(state=initialState, action: PizzaActions.PizzasAction): PizzaState {
     switch (action.type){
         case PizzaActions.LOAD_PIZZAS: {
+            console.log("Load pizzas was called");
             return {
                 ...state,
                 loading: true
